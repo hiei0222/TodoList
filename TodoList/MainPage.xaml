@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="TodoList.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TodoList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource AppBackgroundcolor}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2">
+            <TextBlock x:Name="WeekdayListTitle" Style="{StaticResource HeaderTextStyle}" Margin="10"  
+                       Text="Weekday List"/>
+            <ListView x:Name="weekdayList"  Grid.RowSpan="2"   
+                      ItemsSource="{Binding WeekdayList}"  
+                      ItemTemplate="{StaticResource WeekdayListItemTemplate}" >
+            </ListView>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.RowSpan="2">
+            <TextBlock Style="{StaticResource HeaderTextStyle}" Margin="10" x:Name="ItemDetailTitle"  
+                       Text="Schedule Detail"/>
+            <Frame x:Name="ItemDetailFrame"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
