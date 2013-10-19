@@ -32,7 +32,6 @@ namespace TodoList
         }
 
         /// <summary>
-        /// 往viewModel添加数据
         /// </summary>
         private void addData()
         {
